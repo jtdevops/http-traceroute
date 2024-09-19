@@ -19,6 +19,7 @@ var trace = new Trace(process.argv[2])
       chalk.yellow(step.protocol + '/' + step.protocolVersionMajor + '.' + step.protocolVersionMinor),
       chalk.gray(step.method),
       step.url,
+      chalk.red(step.remoteAddress),
       chalk.gray(step.newCookies ? '(cookies: ' + step.newCookies + ') ' : '') +
       chalk.cyan('(' + step.time + ' ms)')
     )
