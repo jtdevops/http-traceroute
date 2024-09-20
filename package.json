@@ -7,19 +7,23 @@
     "http-traceroute": "bin/cli.js"
   },
   "dependencies": {
-    "chalk": "^2.3.0",
+    "chalk": "^4.1.2",
     "cookie-manager": "^0.0.19",
-    "normalize-url": "^1.9.0",
-    "readable-stream": "^2.3.3",
-    "spdy": "^3.4.4"
+    "http-traceroute": "file:",
+    "normalize-url": "^6.1.0",
+    "readable-stream": "^4.5.2",
+    "spdy": "^4.0.2"
   },
   "devDependencies": {
-    "standard": "^9.0.2",
-    "tape": "^4.8.0"
+    "standard": "^17.1.2",
+    "tape": "^5.9.0"
   },
   "scripts": {
     "lint": "standard",
-    "test": "standard && tape 'test/*.js'"
+    "test": "standard && tape 'test/*.js'",
+    "start": "node --no-deprecation bin/cli.js",
+    "build": "pkg bin/cli.js --targets node14-win-x64 --output http-traceroute.exe",
+    "build:no-dep": "pkg bin/cli.js --targets node14-win-x64,node14-linux --output http-traceroute --options no-deprecation"
   },
   "repository": {
     "type": "git",

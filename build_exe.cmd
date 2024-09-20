@@ -1,3 +1,3 @@
-npm run build:no-dep
+call npm run build:no-dep
 
 pause
